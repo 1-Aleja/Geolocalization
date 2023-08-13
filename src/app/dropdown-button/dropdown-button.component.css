@@ -1,0 +1,21 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  .vertical-dots {
+    font-size: 20px;
+    transform: rotate(90deg);
+    margin: 0;
+  }
