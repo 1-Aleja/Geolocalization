@@ -1,19 +1,23 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dropdown-button',
   templateUrl: './dropdown-button.component.html',
+  
   styleUrls: ['./dropdown-button.component.css']
 })
 
 
 
 export class DropdownButtonComponent {
+  constructor(private router: Router) {}
   showDropdown = false;
   showDetailsModal = false;
   showEditModal = false;
   showDeleteModal = false;
   selectedRowData: any;
+  selectedTabIndex = 0;
 
     eliminarFila(): void {
     // Lógica para eliminar la fila
@@ -47,5 +51,19 @@ export class DropdownButtonComponent {
   closeDeleteModal(): void {
     this.showDeleteModal = false;
   }
-
+  openCountryEdit() {
+    this.router.navigate(['/edit'], { queryParams: { tab: 'country' } });
+  }
+  openDepartmentEdit() {
+    this.router.navigate(['/edit'], { queryParams: { tab: 'department' } });
+  }
+  openCityEdit() {
+    this.router.navigate(['/edit'], { queryParams: { tab: 'city' } }); 
+  }
+  openSectorEdit() {
+    this.router.navigate(['/edit'], { queryParams: { tab: 'sector' } }); 
+  }
+  openPropertyEdit() {
+    this.router.navigate(['/edit'], { queryParams: { tab: 'property' } }); 
+  }
 }

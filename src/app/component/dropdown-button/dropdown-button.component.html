@@ -1,0 +1,112 @@
+<div class="dropdown">
+    <button class="btn btn-info dropdown-toggle" type="button" (click)="toggleDropdown()">
+        <span class="text-light vertical-dots">Acciones</span>
+    </button>
+    <div class="dropdown-menu" [class.show]="showDropdown">
+        <a class="dropdown-item" (click)="openDetailsModal(selectedRowData)">Detalles</a>
+        <a class="dropdown-item" (click)="openEditModal()">Editar</a>
+        <a class="dropdown-item" (click)="openDeleteModal()">Eliminar</a>
+    </div>
+</div>
+<div class="modal" *ngIf="showDetailsModal" id='details-modal' style="display: block;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="bg-info modal-header">
+                <h5 class="text-light modal-title">Informacion</h5>
+                <button type="button" class="close" (click)="closeDetailsModal()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th class='border border-info text-info ' scope="row">Pais</th>
+                                <td class="border border-info">Colombia</td>
+                            </tr>
+                            <tr>
+                                <th class='border border-info text-info ' scope="row">Departamento</th>
+                                <td class="border border-info">Risaralda</td>
+                            </tr>
+                            <tr>
+                                <th class='border border-info text-info ' scope="row">Ciudad</th>
+                                <td class="border border-info">Pereira</td>
+                            </tr>
+                            <tr>
+                                <th class='border border-info text-info ' scope="row">Sector</th>
+                                <td class="border border-info">Norte</td>
+                            </tr>
+                            <tr>
+                                <th class='border border-info text-info ' scope="row">Inmueble</th>
+                                <td class="border border-info">Casa</td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Editar -->
+    <div class="modal" *ngIf="showEditModal" id='details-modal' style="display: block;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="bg-info modal-header">
+                <h5 class="text-light modal-title">Editar</h5>
+                <button type="button" class="close" (click)="closeEditModal()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex justify-content-around">
+                    <button class="mr-1 btn btn-outline-primary " [routerLink]="['/edit']" [queryParams]="{ tab: 'country' }">
+                        <img src="assets/images/country.png" alt='Pais'width="90px" class="text-muted">
+                        <div>País</div>
+                    </button>
+                    <button class="btn btn-outline-primary" [routerLink]="['/edit']" [queryParams]="{ tab: 'department' }">
+                        <img src="assets/images/department.png" alt='departamento'  width="90px" class="text-muted">
+                        <div>Departamento</div>
+                    </button>
+                </div>
+                ,<div class="d-flex justify-content-between">
+                    <button class="m-1 btn btn-outline-primary" [routerLink]="['/edit']" [queryParams]="{ tab: 'city' }">
+                        <img src="assets/images/city.png" alt='ciudad'  width="90px" class="text-muted">
+                        <div>Ciudad</div>
+                    </button>
+                    <button class="m-1 btn btn-outline-primary"[routerLink]="['/edit']" [queryParams]="{ tab: 'sector' }" >
+                        <img src="assets/images/sector.png" alt='sector' width="90px" class="text-muted">
+                        <div>Sector</div>
+                    </button>
+                    <button class="m-1 btn btn-outline-primary"  [routerLink]="['/edit']" [queryParams]="{ tab: 'property' }">
+                        <img src="assets/images/property.png" alt='propiedad' width="90px" class="text-muted">
+                        <div>Inmueble</div>
+                    </button>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+    </div>
+<!-- Modal Eliminar -->
+    <div class="modal" *ngIf="showDeleteModal" id='details-modal' style="display: block;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="bg-danger modal-header">
+                <h5 class="text-light modal-title">Eliminar</h5>
+                <button type="button" class="close" (click)="closeDeleteModal()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-3 modal-body">
+                <p>¿Desea eliminar la fila seleccionada?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info text-light" (click)="closeDeleteModal()" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" (click)="eliminarFila()">Eliminar</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+ 

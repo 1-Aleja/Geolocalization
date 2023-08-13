@@ -1,0 +1,13 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-create',
+  templateUrl: './create.component.html',
+  styleUrls: ['./create.component.css']
+})
+export class CreateComponent {
+  
+    isCreateView = false; // Puedes cambiar esto dependiendo de la lógica de tu aplicación
+    
+
+}
