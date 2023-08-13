@@ -55,7 +55,7 @@ export class DropdownButtonComponent {
     this.router.navigate(['/edit'], { queryParams: { tab: 'country' } });
   }
   openDepartmentEdit() {
-    this.router.navigate(['/edit'], { queryParams: { tab: 'department' } });
+    this.router.navigate(['/edit'], { queryParams: { tab: 'departm-ent' } });
   }
   openCityEdit() {
     this.router.navigate(['/edit'], { queryParams: { tab: 'city' } }); 
