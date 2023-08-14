@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 
 export class DropdownButtonComponent {
   constructor(private router: Router) {}
+  @Input() receivedValue!:{ name: string, id: number };
   showDropdown = false;
   showDetailsModal = false;
   showEditModal = false;
@@ -41,6 +42,7 @@ export class DropdownButtonComponent {
   
   closeDetailsModal(): void {
     this.showDetailsModal = false;
+    
 
   }
 
@@ -66,4 +68,5 @@ export class DropdownButtonComponent {
   openPropertyEdit() {
     this.router.navigate(['/edit'], { queryParams: { tab: 'property' } }); 
   }
+
 }

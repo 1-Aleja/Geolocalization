@@ -1,6 +1,6 @@
 <div class="dropdown">
     <button class="btn btn-info dropdown-toggle" type="button" (click)="toggleDropdown()">
-        <span class="text-light vertical-dots">Acciones</span>
+        <span class="text-light vertical-dots"></span>
     </button>
     <div class="dropdown-menu" [class.show]="showDropdown">
         <a class="dropdown-item" (click)="openDetailsModal(selectedRowData)">Detalles</a>
@@ -22,7 +22,7 @@
                         <tbody>
                             <tr>
                                 <th class='border border-info text-info ' scope="row">Pais</th>
-                                <td class="border border-info">Colombia</td>
+                                <td class="border border-info">{{ receivedValue.name}}</td>
                             </tr>
                             <tr>
                                 <th class='border border-info text-info ' scope="row">Departamento</th>

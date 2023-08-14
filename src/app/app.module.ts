@@ -7,12 +7,20 @@ import { CreateComponent } from './component/create/create.component';
 import { EditComponent } from './component/edit/edit.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MatTabsModule } from '@angular/material/tabs';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditPropertyComponentComponent } from './edit-property-component/edit-property-component.component'; 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, DropdownButtonComponent, CreateComponent, EditComponent],
-  imports: [BrowserModule, FormsModule,AppRoutingModule,MatTabsModule, BrowserAnimationsModule,],
+  declarations: [AppComponent, DropdownButtonComponent, CreateComponent, EditComponent, EditPropertyComponentComponent],
+  imports: [
+              BrowserModule, 
+              FormsModule,
+              AppRoutingModule,
+              MatTabsModule, 
+              BrowserAnimationsModule,
+              HttpClientModule
+            ],
   providers: [],
   bootstrap: [AppComponent],
 })

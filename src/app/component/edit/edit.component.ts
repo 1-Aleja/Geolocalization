@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { EditPropertyComponentComponent } from 'src/app/edit-property-component/edit-property-component.component';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css']
 })
+
 export class EditComponent {
   selectedTabIndex: number = 0;
   constructor(private route: ActivatedRoute) {}

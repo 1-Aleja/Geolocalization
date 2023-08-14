@@ -9,13 +9,10 @@
                     <form>
                         <div class="text-info form-group">
                             <label for="exampleInputEmail1">Ingrese el nombre de Pais</label>
-                            <input type="email" class="border border-info form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            <input type="email" [(ngModel)]="countryName" name="countryName" class="border border-info form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                         </div>
-                        <div class="text-info form-group">
-                            <label for="exampleInputPassword1">Ingrese el Departamento</label>
-                            <input type="password" class=" border border-info form-control" id="exampleInputPassword1" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary text-light">Guardar</button>
+                        <p>{{ responseMessageSaveCountry }}</p>
+                        <button type="submit" (click)="onSaveCountryButtonClick()" class="btn btn-primary text-light">Guardar</button>
                     </form>
                 </div>
             </div>
@@ -29,13 +26,14 @@
                     <form>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Departamento</label>
-                            <input type="email" class=" border border-info form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            <input type="email" [(ngModel)]="departmentName" name="countryName" class=" border border-info form-control" aria-describedby="emailHelp" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Ciudad</label>
-                            <input type="email" class=" border border-info form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            <input type="email" [(ngModel)]="cityName" name="cityName" class=" border border-info form-control"  aria-describedby="emailHelp" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <p>{{ responseMessageSaveCity }}</p>
+                        <button type="submit" (click)="onButtonClickSaveCity()" class="btn btn-primary">Guardar</button>
                     </form>
                 </div>
             </div>
@@ -48,14 +46,15 @@
                 <div class="text-info m-5 d-flex justify-content-center">
                     <form>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Departamento</label>
-                            <input type="email" class="border border-info form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                            <label for="exampleInputEmail1">País</label>
+                            <input type="email" class="border border-info form-control" [(ngModel)]="countryName" name="countryName" aria-describedby="emailHelp" >
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Pais</label>
-                            <input type="password" class="border border-info form-control" id="exampleInputPassword1" required>
+                            <label for="exampleInputPassword1">Departamento</label>
+                            <input  class="border border-info form-control" [(ngModel)]="departmentName" name="departmentName"  required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                         <p>{{ responseMessageSaveDepartment }}</p>
+                        <button type="submit" (click)="onButtonClickSaveDepartment()"  class="btn btn-primary">Guardar</button>
                     </form>
                 </div>
             </div>
@@ -68,14 +67,15 @@
                 <div class="text-info m-5 d-flex justify-content-center">
                     <form>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Sector</label>
-                            <input type="email" class="border border-info form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            <label  for="exampleInputEmail1">Ciudad</label>
+                            <input  [(ngModel)]="propertyNameCity" name="propertyNameCity" class="border border-info form-control" aria-describedby="emailHelp" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Inmueble</label>
-                            <input type="password" class="border border-info form-control" id="exampleInputPassword1" required>
+                            <label for="exampleInputPassword1">Sector</label>
+                            <input [(ngModel)]="propertyName"  name="propertyName" class="border border-info form-control" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <p>{{ responseMessage }}</p>
+                        <button (click)="onSaveButtonClick()" type="submit" class="btn btn-primary">Guardar</button>
                     </form>
                 </div>
             </div>
@@ -88,15 +88,39 @@
                 <div class="text-info m-5 d-flex justify-content-center">
                     <form>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Country</label>
-                            <input type="email" class="border border-info form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            <label for="exampleInputEmail1">Nombre del propietario</label>
+                            <input type="email" class="border border-info form-control" [(ngModel)]="nameOwner"  name="nameOwner" aria-describedby="emailHelp" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Department</label>
-                            <input type="password" class="border border-info form-control" id="exampleInputPassword1" required>
+                            <label for="exampleInputPassword1">Email propietario</label>
+                            <input  class="border border-info form-control"  [(ngModel)]="emailOwner"  name="emailOwner" required>
                         </div>
-
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Conjunto Residencial</label>
+                            <input type="email" class="border border-info form-control" [(ngModel)]="residentialSet"  name="residentialSet" aria-describedby="emailHelp" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Torre</label>
+                            <input  class="border border-info form-control"[(ngModel)]="tower"  name="tower" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Apartamento</label>
+                            <input type="email" class="border border-info form-control" [(ngModel)]="appartment"  name="appartment" aria-describedby="emailHelp" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Dirección</label>
+                            <input  class="border border-info form-control" [(ngModel)]="address"  name="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Sector</label>
+                            <input  class="border border-info form-control" [(ngModel)]="sectorName"  name="sectorName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Ciudad</label>
+                            <input  class="border border-info form-control" [(ngModel)]="cityName"  name="cityName" required>
+                        </div>
+                        <p>{{ responseMessageSaveProperty }}</p>
+                        <button type="submit" (click)="onButtonClickSaveProperty()" class="btn btn-primary">Guardar</button>
                     </form>
                 </div>
             </div>

@@ -7,29 +7,110 @@
     </div>
     
   </div>
-  <div class="m-5">
-    <table class="table table-bordered">
-      <thead class="table-info">
-        <tr>
-          <th  scope="col">Pais</th>
-          <th  scope="col">Departamento</th>
-          <th  scope="col">Ciudad</th>
-          <th  scope="col">Sector</th>
-          <th  scope="col">Inmueble</th>
-          <th  scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Colombia </td>
-          <td>Risaralda </td>
-          <td>Pereira</td>
-          <td>Norte</td>
-          <td>Casa</td>
-          <td class="d-flex justify-content-center"><app-dropdown-button></app-dropdown-button></td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="m-5n">
+    <mat-tab-group>
+      <mat-tab  label="País">
+        <div class="m-5">
+          <table class="table table-bordered">
+            <thead class="table-info">
+              <tr>
+                <th  scope="col">Pais</th>
+                <th  scope="col">Aciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let country of countries;">
+
+                <td>{{country.name}}</td>
+                <td class="d-flex justify-content-center"><app-dropdown-button [receivedValue]="{ name: country.name, id: country.id}"></app-dropdown-button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+      <mat-tab label="Ciudad">
+        <div class="m-5">
+          <table class="table table-bordered">
+            <thead class="table-info">
+              <tr>
+                <th  scope="col">Ciudades</th>
+                <th  scope="col">Aciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let city of cities;">
+                <td>{{city.name}}</td>
+                <td class="d-flex justify-content-center"><app-dropdown-button [receivedValue]="{ name: city.name, id: city.id}"></app-dropdown-button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+      <mat-tab label="Departamento">
+        <div class="m-5">
+          <table class="table table-bordered">
+            <thead class="table-info">
+              <tr>
+                <th  scope="col">Departamentos</th>
+                <th  scope="col">Aciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let department of departments;">
+                <td>{{department.name}}</td>
+                <td class="d-flex justify-content-center"><app-dropdown-button [receivedValue]="{ name: department.name, id: department.id}"></app-dropdown-button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+      <mat-tab label="sector">
+        <div class="m-5">
+          <table class="table table-bordered">
+            <thead class="table-info">
+              <tr>
+                <th  scope="col">Sector</th>
+                <th  scope="col">Aciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let sector of sector;">
+                <td>{{sector.name}}</td>
+                <td class="d-flex justify-content-center"><app-dropdown-button [receivedValue]="{ name: sector.name, id: sector.id}"></app-dropdown-button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+      <mat-tab label="Inmueble">
+        <div class="m-5">
+          <table class="table table-bordered">
+            <thead class="table-info">
+              <tr>
+                <th  scope="col">Nombre</th>
+                <th  scope="col">Email</th>
+                <th  scope="col">Conjunto</th>
+                <th  scope="col">Torre</th>
+                <th  scope="col">Direccion</th>
+                <th  scope="col">Apartamento</th>
+                <th  scope="col">Aciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let property of property;">
+                <td>{{property.name_owner}}</td>
+                <td>{{property.email_owner}}</td>
+                <td>{{property.residential_set}}</td>
+                <td>{{property.tower}}</td>
+                <td>{{property.address}}</td>
+                <td>{{property.appartment}}</td>
+                <td class="d-flex justify-content-center"><app-dropdown-button  [receivedValue]="{ name: property.name_owner, id: property.id }"></app-dropdown-button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+  </mat-tab-group>
   </div>
 </div>
 

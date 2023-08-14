@@ -3,7 +3,7 @@
         <mat-tab  label="País">
             <div class="m-5 card ">
                 <div class="bg-info card-header d-flex justify-content-center text-light ">
-                    <h1 class="m-3">Crear Pais</h1>
+                    <h1 class="m-3">Editar Pais</h1>
                 </div>
                 <div class="m-5 d-flex justify-content-center">
                     <form>
@@ -23,7 +23,7 @@
         <mat-tab label="Ciudad">
             <div class="m-5 card">
                 <div class="bg-info card-header d-flex justify-content-center text-light">
-                    <h1 class="m-3 d-flex">Departamento</h1>
+                    <h1 class="m-3 d-flex">Editar Departamento</h1>
                 </div>
                 <div class="text-info m-5 d-flex justify-content-center">
                     <form>
@@ -43,7 +43,7 @@
         <mat-tab label="Departamento">
             <div class="m-5 card">
                 <div class="text-light bg-info card-header d-flex justify-content-center">
-                    <h1 class="m-3 d-flex ">Ciudad</h1>
+                    <h1 class="m-3 d-flex ">Editar Ciudad</h1>
                 </div>
                 <div class="text-info m-5 d-flex justify-content-center">
                     <form>
@@ -63,7 +63,7 @@
         <mat-tab label="sector">
             <div class="m-5 card">
                 <div class="text-light bg-info card-header d-flex justify-content-center">
-                    <h1 class="m-3 ">Sector</h1>
+                    <h1 class="m-3 ">Editar Sector</h1>
                 </div>
                 <div class="text-info m-5 d-flex justify-content-center">
                     <form>
@@ -81,25 +81,7 @@
             </div>
         </mat-tab>
         <mat-tab label="Inmueble">
-            <div class="m-5 card">
-                <div class="text-light bg-info card-header d-flex justify-content-center">
-                    <h1 class="m-3">Inmueble</h1>
-                </div>
-                <div class="text-info m-5 d-flex justify-content-center">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Country</label>
-                            <input type="email" class="border border-info form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Department</label>
-                            <input type="password" class="border border-info form-control" id="exampleInputPassword1" required>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                    </form>
-                </div>
-            </div>
+            <app-edit-property-component></app-edit-property-component>
         </mat-tab>
     </mat-tab-group>
     
